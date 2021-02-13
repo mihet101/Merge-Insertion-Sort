@@ -1,29 +1,12 @@
 '''
-Merge and Merge_Insertion Sorts
-
+Merge_Insertion Sort
+Merge Sort
+Insertion Sort
+Author: Mihe3200
+ID: 180963200
+Email: mihe3200@mylaurier.ca
 '''
-
 from Insertion_sort import *
-
-def merge(left, right):
-
-    print("\nMerging: ", left, " and ", right)
-    left_index, right_index = 0, 0
-    result = []
-    while left_index < len(left) and right_index < len(right):
-        if left[left_index] < right[right_index]:
-            result.append(left[left_index])
-            left_index += 1
-        else:
-            result.append(right[right_index])
-            right_index += 1
-
-    result += left[left_index:]
-    result += right[right_index:]
-    
-    print(result)
-    return result
-
 
 def merge_sort(array):
 
@@ -37,7 +20,30 @@ def merge_sort(array):
 
     return merge(left, right)
 
+def insertionSort(A): 
 
+    #print(" ",A) 
+    print("\nInsertion sorting: ",A) 
+
+    for j in range(1, len(A)):   
+
+        key = A[j] 
+
+        i = j-1
+
+        while i >= 0 and A[i] > key: 
+
+            A[i + 1] = A[i] 
+
+            i = i - 1
+
+            #print("\n ", A)
+
+        A[i + 1] = key
+
+        #print("\n ",A)
+    print(A)
+    return A
 
 def merge_insertion_sort(array, user_level, level=1):
 
